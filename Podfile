@@ -7,6 +7,5 @@ target 'MarsRoverApp' do
 
   # Pods for MarsRoverApp
 
-pod 'RealmSwift'
 
 end

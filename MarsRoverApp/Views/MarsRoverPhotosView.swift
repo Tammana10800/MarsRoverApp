@@ -13,7 +13,7 @@ struct MarsRoverPhotosView: View {
     @StateObject private var viewModel = MarsRoverViewModel()
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 switch viewModel.viewState {
                 case .initialize:
@@ -23,12 +23,12 @@ struct MarsRoverPhotosView: View {
                 case .success(let photos):
                     MarsRoverListView(photos: photos)
                 case .apiError(let error):
-                    Text("Error: \(error?.localizedDescription ?? "")")
+                    Text("Error: \(error?.localizedDescription ?? "Unknown error")")
                 }
             }
             .navigationTitle("Mars Rover List")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         isDarkMode.toggle()
                         UserDefaults.standard.set(isDarkMode, forKey: "isDarkMode")
