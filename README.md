@@ -24,6 +24,7 @@ A SwiftUI-based iOS app that fetches and displays photos taken by NASA's Mars Ro
    cd MarsRoverApp
 
 2. **Ensure you have CocoaPods installed.**
+   ```bash
    pod install
 
 3. **open MarsRoverApp.xcworkspace**
