@@ -12,11 +12,11 @@ A SwiftUI-based iOS app that fetches and displays photos taken by NASA's Mars Ro
 - 🌗 Dark mode support with user preferences stored.
 - 💾 Persistent storage using **UserDefaults**.
 - 🔍 Detailed view for individual rover photos.
-
+- 
 ---
 
 ## 🛠 Setup Instructions
-
+**XCode Used 16.2, iOS Minimum Deployment Target 15.0**
 1. **Clone the Repository:**
 
    ```bash
