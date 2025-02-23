@@ -18,13 +18,15 @@ class RealmService {
     func saveRoverPhotos(_ photos: [CachedMarsRoverPhoto]) {
         do {
             try realm.write {
-                       for photo in photos {
-                           if let rover = photo.rover {
-                               realm.add(rover, update: .modified)
-                           }
-                           realm.add(photo, update: .modified)
-                       }
-                   }
+                let existingPhotos = realm.objects(CachedMarsRoverPhoto.self)
+                
+                // Compare data
+                if existingPhotos.count != photos.count {
+                    // Clear old cache and save new data
+                    realm.delete(existingPhotos)
+                    realm.add(photos, update: .modified)
+                }
+            }
         } catch {
             print("Error saving photos to Realm: \(error.localizedDescription)")
         }

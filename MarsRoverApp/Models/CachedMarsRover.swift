@@ -8,6 +8,7 @@
 import RealmSwift
 
 class CachedMarsRover: Object {
+    
     @Persisted(primaryKey: true) var id: Int
     @Persisted var name: String
     @Persisted var landingDate: String

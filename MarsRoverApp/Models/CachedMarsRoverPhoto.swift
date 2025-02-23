@@ -8,6 +8,7 @@
 import RealmSwift
 
 class CachedMarsRoverPhoto: Object {
+    
     @Persisted(primaryKey: true) var id: Int
     @Persisted var imgSrc: String
     @Persisted var earthDate: String
